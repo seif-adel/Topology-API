@@ -54,3 +54,23 @@ instructions:
 * Return value: List of devices
 * Description: Function to return all the devices found in specific topology and connected to specific node 
 ************************************************************************************/
+
+////////////////////////// documentaions of Classes //////////////////////////////////////////////////////////////////////////////
+
+class.1) Component2 --> abstract class to represent the parent of all components type classes and define all attributes and functions which are common in each component 
+
+class.2) Resistor --> represent resistor component
+
+class.3) Inductor --> represent Inductor component
+
+class.4) Capacitor --> represent capacitor component 
+
+class.5) Pmos --> represent pmos component 
+
+class.6) Nmos --> represent nmos component
+
+class.7) Topology --> represent the topology which consists of string id and List<Component2> , and also some functions to access data of topology e.g AddDevice() , GetDevices()
+
+class.8) API --> implement the APIs to access, manage and store device topologies and also contain List<Topology> called memtopologies to represent the memory in the program 
+ 
+class.9) Program --> contain the main function which use the APIS 
