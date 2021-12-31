@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -65,6 +65,17 @@ namespace topology_op_CSharp
 				}
 
 				else if (type_of_item == "nmos")
+				{
+					string id_item = (string)(item.SelectToken("id"));
+					string temp = id_item[0] + "-" + id_item[1] + "-";
+					JToken temp2 = item.SelectToken(temp);
+					int max_item = (int)(temp2.SelectToken("max"));
+					int min_item = (int)(temp2.SelectToken("min"));
+					float defal_item = (float)(temp2.SelectToken("default"));
+					List<string> arrr = new List<string>() { (string)(item.SelectToken("netlist.drain")), (string)(item.SelectToken("netlist.gate")), (string)(item.SelectToken("netlist.source")) };
+					t.AddDevice(type_of_item, max_item, min_item, (int)defal_item, id_item, arrr);
+				}
+				else if (type_of_item == "pmos")
 				{
 					string id_item = (string)(item.SelectToken("id"));
 					string temp = id_item[0] + "-" + id_item[1] + "-";
@@ -217,6 +228,17 @@ namespace topology_op_CSharp
 					obj.components[i].nmos.defaul = t.GetDevices()[i].Getdefal();
 					obj.components[i].nmos.min = t.GetDevices()[i].Getmin();
 					obj.components[i].nmos.max = t.GetDevices()[i].Getmax();
+					obj.components[i].netlist = new ExpandoObject();
+					obj.components[i].netlist.drain = t.GetDevices()[i].GetpinsValue()[0];
+					obj.components[i].netlist.gate = t.GetDevices()[i].GetpinsValue()[1];
+					obj.components[i].netlist.source = t.GetDevices()[i].GetpinsValue()[2];
+				}
+				else if (t.GetDevices()[i].GetType() == "pmos")
+				{
+					obj.components[i].pmos = new ExpandoObject();
+					obj.components[i].pmos.defaul = t.GetDevices()[i].Getdefal();
+					obj.components[i].pmos.min = t.GetDevices()[i].Getmin();
+					obj.components[i].pmos.max = t.GetDevices()[i].Getmax();
 					obj.components[i].netlist = new ExpandoObject();
 					obj.components[i].netlist.drain = t.GetDevices()[i].GetpinsValue()[0];
 					obj.components[i].netlist.gate = t.GetDevices()[i].GetpinsValue()[1];
