@@ -10,7 +10,7 @@ introduction:
 instructions: 
 1) you need to download visual studio using c# with .NET version 4.7.2 or more 
 2) you need to download Newtonsoft.Json to run this project 
-3) you must enter json file with format like the sample in repo otherwies the data will not saved correctly 
+3) you must enter json file with format like the sample downloaded in repo otherwies the data will not saved correctly 
 4) the project support the devices [ resistor - inductor - capacitor - nmos - pmos ] only to be in topologies but you can edit it and add any other component 
 
 ////////////////////////// documentaions of APIS //////////////////////////////////////////////////////////////////////////////
