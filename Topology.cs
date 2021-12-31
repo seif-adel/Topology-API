@@ -47,6 +47,11 @@ namespace topology_op_CSharp
 				Nmos r = new Nmos(max, min, defal, id, pino);
 				components.Add(r);
 			}
+			else if (type == "pmos")
+			{
+				Pmos p = new Pmos(max, min, defal, id, pino);
+				components.Add(p);
+			}
 		}
 
 		public List<Component2> GetDevices()
