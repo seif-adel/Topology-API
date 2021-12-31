@@ -1,11 +1,15 @@
 # Topology-API
 The project is aim to develop some APIs which facilitate the dealing with JSON files in c#
 
+introduction:
+1) the project is implemented in object oriented manner
+2) the project is implemented using c# as it provied easy way to treat with json libraries and it facillitate the process of developing program in object oriented manner
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 instructions: 
 1) you need to download visual studio using c# with .NET version 4.7.2 or more 
 2) you need to download Newtonsoft.Json to run this project 
 3) you must enter json file with format like the sample in repo otherwies the data will not saved correctly 
-4) 
+
 ////////////////////////// documentaions of APIS //////////////////////////////////////////////////////////////////////////////
  /************************************************************************************
 1)
